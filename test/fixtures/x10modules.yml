@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  unit_code: MyText
+  description: MyText
+  is_dimmable: false
+
+two:
+  name: MyText
+  unit_code: MyText
+  description: MyText
+  is_dimmable: false

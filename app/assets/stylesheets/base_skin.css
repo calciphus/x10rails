@@ -1,0 +1,49 @@
+/* This is the basic skin for the X10Rails file. You can replace this with your own.
+
+#FIXME: User prefs should let you chose which skin to use.
+
+Created by: Brad Hubbard (brad@bradhubbard.net / http://bradhubbard.net)
+
+*/
+body {
+  background: #ccc;	
+}
+div.mainmodule {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	width: 250px;
+	display: inline-block;
+	margin: 5px;
+}
+div.mainmodule div.module_controls {
+	text-align: center;
+}
+div.mainmodule div.module_controls input, div.mainmodule div.module_controls form, div.mainmodule div.module_controls button{
+	display: inline-block;
+	height: 44px;
+	width: 50px;
+	margin: 3px;
+	position: relative;
+	text-align: center;
+}
+div.mainmodule div.unit_code {
+	position: relative;
+	float: right;
+	text-align: right;
+	width: 40px;
+	font-weight: bolder;
+}
+
+div.mainmodule div.unit_name {
+	position: relative;
+	float: left;
+	width: 200px;
+	font-weight: bolder;
+}
+div.mainmodule div.unit_description {
+	display: none;
+}
+div.mainmodule div.destroy {
+	display: none;
+}

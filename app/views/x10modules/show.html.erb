@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @x10module.name %>
+</p>
+
+<p>
+  <b>Unit code:</b>
+  <%= @x10module.unit_code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @x10module.description %>
+</p>
+
+<p>
+  <b>Is dimmable:</b>
+  <%= @x10module.is_dimmable %>
+</p>
+
+
+<%= link_to 'Edit', edit_x10module_path(@x10module) %> |
+<%= link_to 'Back', x10modules_path %>
