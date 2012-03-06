@@ -1,20 +1,42 @@
-<% @x10modules.each do |x10module| %>
-<div class="mainmodule" id="module_<%=x10module.id%>">
-    <div class="unit_name"><%= x10module.name %></div>
-	<div class="unit_code"><%= x10module.unit_code %></div>
-	<div class="btn-group">
-		<%= link_to "Off", unit_off_x10module_url(x10module), :class => "btn"%>
-		<% if x10module.is_dimmable %>
-			<%= link_to " - ", unit_dim_x10module_url(x10module), :class => "btn" %>
-			<%= link_to " + ", unit_bright_x10module_url(x10module), :class => "btn" %>	
-		<% end %>
-		<%= link_to "On", unit_on_x10module_url(x10module), :class => "btn" %>
-	</div>
-    <div class="unit_description"><%= x10module.description %></div>
-	<div class="destroy"><%= link_to '[X]', x10module, confirm: 'Are you sure?', method: :delete %></div>
+<h2>Control Modules</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Unit</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @x10modules.each do |x10module| %>
+      <tr>
+        <td><%= x10module.unit_code %></td>
+        <td><%= link_to x10module.name, x10module_path(x10module) %></td>
+        <td><%= x10module.description %></td>
+        <td>
+          <%= link_to 'Edit', edit_x10module_path(x10module), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', x10module_path(x10module), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>Macros</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+	  <th>Description</th>
+	  <th>Command</th>
+	  <th>Actions</th>
+	</tr>
+  </thead>
+</table>
+
+<div class="btn-group">
+	<%= link_to 'Add Module', new_x10module_path, :class => 'btn' %>
+	<%= link_to 'Create Macro', "#", :class => 'btn' %>
 </div>
-<% end %>
 
-<br />
-
-<%= link_to 'Add Module', new_x10module_path %>

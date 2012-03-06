@@ -1,33 +1,39 @@
-<%= form_for(@x10module) do |f| %>
-  <% if @x10module.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@x10module.errors.count, "error") %> prohibited this x10module from being saved:</h2>
+<%= form_for @x10module, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> X10module</legend>
 
-      <ul>
-      <% @x10module.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :unit_code %><br />
-    <%= f.text_field :unit_code, :size => 5 %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :rows => 2 %>
-  </div>
-  <div class="field">
-    <%= f.label :is_dimmable %><br />
-    <%= f.check_box :is_dimmable %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :unit_code, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :unit_code, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :rows => 2, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :is_dimmable, 'Type', :class => 'control-label' %>
+      <div class="controls">
+		<div class="btn-group" data-toggle="buttons-radio">
+			<button type="radio" class="btn btn-primary" value="1" name="x10module[is_dimmable]" id="x10module_is_dimmable_1">Lamp</button>
+			<button type="radio" class="btn btn-primary" value="0" name="x10module[is_dimmable]" id="x10module_is_dimmable_0">Appliance</button>
+		</div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= link_to 'Cancel', x10modules_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

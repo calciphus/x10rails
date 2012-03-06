@@ -1,10 +1,10 @@
 X10rails::Application.routes.draw do
   resources :x10modules do
     member do
-      post 'unit_on'
-      post 'unit_off'
-      post 'unit_dim'
-      post 'unit_bright'
+      get 'unit_on'
+      get 'unit_off'
+      get 'unit_dim'
+      get 'unit_bright'
     end
   end
   

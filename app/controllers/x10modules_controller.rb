@@ -47,7 +47,7 @@ class X10modulesController < ApplicationController
     @x10module = X10module.find(params[:id])
     respond_to do |format|
       format.html { render text: "#{@x10module.unit_code} ON"}
-      format.json { render json: @x10module }
+      format.json { render head :no_content }
     end
   end
 
@@ -57,7 +57,7 @@ class X10modulesController < ApplicationController
     @x10module = X10module.find(params[:id])
     respond_to do |format|
       format.html { render text: "#{@x10module.unit_code} OFF"}
-      format.json { render json: @x10module }
+      format.json { render head :no_content }
     end
   end
 
@@ -67,7 +67,7 @@ class X10modulesController < ApplicationController
     @x10module = X10module.find(params[:id])
     respond_to do |format|
       format.html { render text: "#{@x10module.unit_code} BRIGHT"}
-      format.json { render json: @x10module }
+      format.json { render head :no_content }
     end
   end
 
@@ -77,7 +77,7 @@ class X10modulesController < ApplicationController
     @x10module = X10module.find(params[:id])
     respond_to do |format|
       format.html { render text: "#{@x10module.unit_code} DIM"}
-      format.json { render json: @x10module }
+      format.json { render head :no_content }
     end
   end
 
@@ -93,7 +93,7 @@ class X10modulesController < ApplicationController
 
     respond_to do |format|
       if @x10module.save
-        format.html { redirect_to @x10module, notice: 'X10module was successfully created.' }
+        format.html { redirect_to x10modules_path, notice: 'X10module was successfully created.' }
         format.json { render json: @x10module, status: :created, location: @x10module }
       else
         format.html { render action: "new" }
@@ -109,7 +109,7 @@ class X10modulesController < ApplicationController
 
     respond_to do |format|
       if @x10module.update_attributes(params[:x10module])
-        format.html { redirect_to @x10module, notice: 'X10module was successfully updated.' }
+        format.html { redirect_to x10modules_path, notice: 'X10module was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

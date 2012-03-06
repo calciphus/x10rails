@@ -4,9 +4,12 @@
   <title>X10rails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag	 "base_skin"%>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application", "bootstrap-button" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		$('.tabs').button();
+	</script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -20,10 +23,12 @@
 			<a href="#" class="brand">X10Rails</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-			  		<li class="<%= if controller.action_name == "index" then "active" end %>">
-						<a href="#"><i class="icon-white icon-home"></i> Home</a>
+			  		<li class="<%= if controller.action_name == "control_window" then "active" end %>">
+						<%= link_to "Home", root_path %>
 			  		</li>
-			  		<li><a href="#"><i class="icon-white icon-cog"></i> Settings</a></li>
+			  		<li class="<%= if controller.action_name == "index" then "active" end %>">
+						<%= link_to "Settings", x10modules_path %>
+					</li>
 				</ul>
 			</div>
 		</div>
