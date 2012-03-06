@@ -2,6 +2,15 @@ class X10modulesController < ApplicationController
   # GET /x10modules
   # GET /x10modules.json
   def index
+    @x10modules = X10module.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @x10modules }
+    end
+  end
+
+  def control_window
     @x10modules = X10module.find(:all, :order => :unit_code)
 
     respond_to do |format|
