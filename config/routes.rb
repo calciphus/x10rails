@@ -1,5 +1,13 @@
 X10rails::Application.routes.draw do
-  resources :x10modules
+  resources :x10modules do
+    member do
+      post 'unit_on'
+      post 'unit_off'
+      post 'unit_dim'
+      post 'unit_bright'
+    end
+  end
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

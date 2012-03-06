@@ -6,12 +6,12 @@
 	<div class="unit_code"><%= x10module.unit_code %></div>
 	<div class="module_controls">
 		
-		<%= button_to "Off", {:action => "unit_off", :unit_code => x10module.unit_code}, :method => :get %>
+		<%= button_to "Off", unit_off_x10module_url(x10module) %>
 		<% if x10module.is_dimmable %>
-			<%= button_to "-", {:action => "unit_dim", :unit_code => x10module.unit_code}, :method => :get %>
-			<%= button_to "+", {:action => "unit_bright", :unit_code => x10module.unit_code}, :method => :get %>	
+			<%= button_to "-", unit_dim_x10module_url(x10module) %>
+			<%= button_to "+", unit_bright_x10module_url(x10module) %>	
 		<% end %>
-		<%= button_to "On", {:action => "unit_on", :unit_code => x10module.unit_code}, :method => :get %>
+		<%= button_to "On", unit_on_x10module_url(x10module) %>
 		
 	</div>
     <div class="unit_description"><%= x10module.description %></div>

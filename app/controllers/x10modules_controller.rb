@@ -35,8 +35,9 @@ class X10modulesController < ApplicationController
   # GET /x10modules/on/unit_code
   # GET /x10modules/on/unit_code.json
   def unit_on
+    @x10module = X10module.find(params[:id])
     respond_to do |format|
-      format.html { render text: "#{params(:unit_code)} ON"}
+      format.html { render text: "#{@x10module.unit_code} ON"}
       format.json { render json: @x10module }
     end
   end
@@ -44,8 +45,9 @@ class X10modulesController < ApplicationController
   # GET /x10modules/off/unit_code
   # GET /x10modules/off/unit_code.json
   def unit_off
+    @x10module = X10module.find(params[:id])
     respond_to do |format|
-      format.html { render text: "#{params(:unit_code)} OFF"}
+      format.html { render text: "#{@x10module.unit_code} OFF"}
       format.json { render json: @x10module }
     end
   end
@@ -53,8 +55,9 @@ class X10modulesController < ApplicationController
   # GET /x10modules/bright/unit_code
   # GET /x10modules/bright/unit_code.json
   def unit_bright
+    @x10module = X10module.find(params[:id])
     respond_to do |format|
-      format.html { render text: "#{params(:unit_code)} BRIGHT"}
+      format.html { render text: "#{@x10module.unit_code} BRIGHT"}
       format.json { render json: @x10module }
     end
   end
@@ -62,8 +65,9 @@ class X10modulesController < ApplicationController
   # GET /x10modules/dim/unit_code
   # GET /x10modules/dim/unit_code.json
   def unit_dim
+    @x10module = X10module.find(params[:id])
     respond_to do |format|
-      format.html { render text: "#{params(:unit_code)} DIM"}
+      format.html { render text: "#{@x10module.unit_code} DIM"}
       format.json { render json: @x10module }
     end
   end
